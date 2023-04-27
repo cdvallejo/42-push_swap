@@ -6,7 +6,7 @@
 /*   By: cvallejo <cvallejo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 11:33:19 by cvallejo          #+#    #+#             */
-/*   Updated: 2023/04/24 13:41:26 by cvallejo         ###   ########.fr       */
+/*   Updated: 2023/04/27 17:40:03 by cvallejo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	swap_b(t_stack *stack_b, int print)
 {
 	int	aux;
 
-	if (stack_b->index == NULL || stack_b->size == 1)
+	if (stack_b->index == NULL || stack_b->new_size == 1)
 		return ;
 	aux = stack_b->index[0];
 	stack_b->index[0] = stack_b->index[1];

@@ -6,7 +6,7 @@
 /*   By: cvallejo <cvallejo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 12:01:34 by cvallejo          #+#    #+#             */
-/*   Updated: 2023/04/18 12:28:19 by cvallejo         ###   ########.fr       */
+/*   Updated: 2023/04/27 17:37:40 by cvallejo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,10 @@ void	reverse_rotate_b(t_stack *stack_b, int print)
 	int	i;
 	int	aux;
 
-	if (stack_b->index == NULL || stack_b->size == 1)
+	if (stack_b->index == NULL || stack_b->new_size == 1)
 		return ;
-	aux = stack_b->index[stack_b->size -1];
-	i = stack_b->size -2;
+	aux = stack_b->index[stack_b->new_size -1];
+	i = stack_b->new_size -2;
 	while (i >= 0)
 	{
 		stack_b->index[i + 1] = stack_b->index[i];
