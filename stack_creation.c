@@ -97,47 +97,46 @@ void	target_position(t_stack *stack_a, t_stack *stack_b)
 	if (stack_b->target_pos != 0)
 		free_memory_int(stack_b->target_pos);
 	stack_b->target_pos = malloc(sizeof(int) * stack_b->new_size);
+	ft_printf("%p", stack_b->target_pos);
 	i = 0;
 	while(i < stack_b->new_size)
 	{
 		j = 0;
 		aux = stack_a->index[stack_a->new_size - 1];
-		ft_printf("******* I - POS = %d\n", i);
-		ft_printf("-----EL VALOR DE AUX ES: %d\n", aux);
+		/*ft_printf("******* I - POS = %d\n", i);
+		ft_printf("-----EL VALOR DE AUX ES: %d\n", aux);*/
 		while(j < stack_a->new_size)
 		{
-			ft_printf("******* A - POS = %d\n", j);
+			//ft_printf("******* A - POS = %d\n", stack_a->pos[j]);
 			if (stack_b->index[i] < stack_a->index[j] && stack_b->index[i] > aux)
 			{
-				aux = stack_a->index[j];
+				//aux = stack_a->index[j];
 				stack_b->target_pos[i] = stack_a->pos[j];
-				ft_printf("**COMPRARA %d CON %d\n", stack_b->index[i], stack_a->index[j]);
+				/*ft_printf("**COMPARA %d CON %d\n", stack_b->index[i], stack_a->index[j]);
 				ft_printf("-------AUX: %d\n", aux);
 				ft_printf("-------T_POS: %d\n", stack_a->pos[j]);
-				ft_printf("\n");
+				ft_printf("\n");*/
 			}
-			else if (stack_b->index[i] > stack_a->index[j])
+			else if ((stack_b->index[i] > aux || stack_b->index[i] < stack_a->index[j]) && aux > stack_a->index[j])
 			{
-				if (aux > stack_a->index[j])
-				{
-					aux = stack_a->index[j];
-					stack_b->target_pos[i] = stack_a->pos[j];
-					ft_printf("**COMPRARA %d CON %d\n", stack_b->index[i], stack_a->index[j]);
-					ft_printf("IF 2 ------- = AUX: %d\n", aux);
-					ft_printf("IF 2 ------- = T_POS: %d\n", stack_a->pos[j]);
-					ft_printf("\n");
-				}
+				//aux = stack_a->index[j];
+				stack_b->target_pos[i] = stack_a->pos[j];
+				/*ft_printf("**COMPARA %d CON %d\n", stack_b->index[i], stack_a->index[j]);
+				ft_printf("IF 2 ------- = AUX: %d\n", aux);
+				ft_printf("IF 2 ------- = T_POS: %d\n", stack_a->pos[j]);
+				ft_printf("\n");*/
 			}
+			aux = stack_a->index[j];
 			j++;
 		}
 		i++;
 	}
-	i = 0;
+	/*i = 0;
 	while(i < stack_b->new_size)
 	{
 		ft_printf("*****T_POS: %d\n", stack_b->target_pos[i]);
 		i++;
-	}
+	}*/
 }
 
 /*Función que comprueba si el stack está ordenado*/
