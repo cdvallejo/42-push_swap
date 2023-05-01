@@ -6,17 +6,18 @@
 /*   By: cvallejo <cvallejo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 11:33:19 by cvallejo          #+#    #+#             */
-/*   Updated: 2023/04/24 10:11:32 by cvallejo         ###   ########.fr       */
+/*   Updated: 2023/05/01 10:57:05 by cvallejo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
 //Mueve todos los elementos de a 1 posición ascendente
 //El primer elemento pasa a ser el último
 //1 2 3 -> 2 3 1
 void	rotate_a(t_stack *stack_a, int print)
 {
-	int i;
+	int	i;
 	int	aux;
 
 	if (stack_a->index == NULL || stack_a->new_size == 1)

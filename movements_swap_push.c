@@ -6,7 +6,7 @@
 /*   By: cvallejo <cvallejo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 11:33:19 by cvallejo          #+#    #+#             */
-/*   Updated: 2023/04/27 17:40:03 by cvallejo         ###   ########.fr       */
+/*   Updated: 2023/05/01 10:57:03 by cvallejo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,9 +51,9 @@ void	ss(t_stack *stack_a, t_stack *stack_b)
 //Toma el primer elemento de b y lo pasa al comienzo de A
 void	push_a(t_stack *stack_a, t_stack *stack_b)
 {
-	int aux;
-	int i;
-	
+	int	aux;
+	int	i;
+
 	if (stack_b->index == NULL)
 		return ;
 	stack_a->new_size += 1;
@@ -83,9 +83,9 @@ void	push_a(t_stack *stack_a, t_stack *stack_b)
 //Toma el primer elemento de A y lo pasa al comienzo de B
 void	push_b(t_stack *stack_a, t_stack *stack_b)
 {
-	int aux;
-	int i;
-	
+	int	aux;
+	int	i;
+
 	if (stack_a->index == NULL)
 		return ;
 	stack_b->new_size += 1;

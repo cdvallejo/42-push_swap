@@ -6,7 +6,7 @@
 #    By: cvallejo <cvallejo@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/26 09:58:38 by cvallejo          #+#    #+#              #
-#    Updated: 2023/04/27 15:48:36 by cvallejo         ###   ########.fr        #
+#    Updated: 2023/05/01 12:40:21 by cvallejo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,10 +16,12 @@ utils.c \
 set_params.c \
 stack_creation.c \
 sort_stack.c \
+sort_3_op.c \
 sort_4_op.c \
 movements_swap_push.c \
 movements_rotate.c \
 movements_reverse.c \
+debug.c
 
 OBJS = ${SRC:.c=.o}
 NAME = push_swap
@@ -32,7 +34,7 @@ LIBRARY = libft/libft.a
 CC = gcc -g
 CFLAGS = -Wall -Wextra -Werror
 RM = rm -f
-INCLUDE = -I push_swap.h 
+INCLUDE = -I push_swap.h
 
 #RULES#
 .c.o:
@@ -40,15 +42,15 @@ INCLUDE = -I push_swap.h
 
 all: libft push_swap
 
-libft: 
+libft:
 	@echo "\n *** COMPILING LIBFT ***\n"
 	@${MAKE} -C ./libft/
 
-compile: ${NAME} 
+compile: ${NAME}
 
 $(NAME): ${OBJS}
 	@echo "\n *** COMPILING PUSH_SWAP PROGRAM ***\n"
-	@${CC} ${INCLUDE} ${OBJS} ${LIBRARY} -o ${NAME} 
+	@${CC} ${INCLUDE} ${OBJS} ${LIBRARY} -o ${NAME}
 
 #BONUS RULES#
 

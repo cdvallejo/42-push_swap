@@ -6,7 +6,7 @@
 /*   By: cvallejo <cvallejo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 12:20:14 by cvallejo          #+#    #+#             */
-/*   Updated: 2023/04/25 17:40:12 by cvallejo         ###   ########.fr       */
+/*   Updated: 2023/05/01 10:56:42 by cvallejo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,6 @@ int	*set_params_string(int ac, char **split_av, int *numbers)
 		i++;
 	}
 	free_memory(split_av);
-	/*i = 0;
-	while (numbers[i])
-	{
-		ft_printf("%d\n", numbers[i]);
-		i++;
-	}*/
 	return (numbers);
 }
 
@@ -65,10 +59,5 @@ int	*set_params_no_string(int ac, char **split_av, int *numbers)
 		j++;
 	}
 	i = 0;
-	/*while (numbers[i])
-	{
-		ft_printf("%d\n", numbers[i]);
-		i++;
-	}*/
 	return (numbers);
 }

@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_numbers.c                                    :+:      :+:    :+:   */
+/*   check_args.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cvallejo <cvallejo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 12:10:55 by cvallejo          #+#    #+#             */
-/*   Updated: 2023/04/04 10:43:12 by cvallejo         ###   ########.fr       */
+/*   Updated: 2023/05/01 10:57:14 by cvallejo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/*Comprobamos que no exista un primer elemento vacío (primera condición), ni 
+/*Comprobamos que no exista un primer elemento vacío (primera condición), ni
 que '-', '+' no sean un único elemento del array (segunda condición:
-no deja incrementar el contador en el caso de que ese signo dé como 
+no deja incrementar el contador en el caso de que ese signo dé como
 resultado 1 (un único caracter) al no aumentar el contador,
 pasa el signo a !ft_isdigit*/
 int	is_number(char *str)
@@ -37,8 +37,8 @@ int	is_number(char *str)
 	return (1);
 }
 
-/*Comprobamos que los parámetros son números, y si resulta que al final se trata de un único número,
-el programa no hace nada.*/
+/*Comprobamos que los parámetros son números, y si resulta que al final se trata
+de un único número, el programa no hace nada.*/
 void	check_number(int ac, char **split_av, int i)
 {
 	while (i < ac)
@@ -54,7 +54,7 @@ void	check_number(int ac, char **split_av, int i)
 		free_memory(split_av);
 }
 
-/*En el caso de recibir un String al que le hemos pasado un split, 
+/*En el caso de recibir un String al que le hemos pasado un split,
 contamos cuántos números tiene*/
 int	strlen_split(char **split_av)
 {
@@ -90,8 +90,8 @@ void	check_int(int ac, char **split_av, int i)
 {
 	while (split_av[i])
 	{
-		if ((ft_long_atoi(split_av[i])
-				<-2147483648) || (ft_long_atoi(split_av[i]) > 2147483647))
+		if ((ft_long_atoi(split_av[i]) < -2147483648)
+			|| (ft_long_atoi(split_av[i]) > 2147483647))
 			print_error();
 		i++;
 	}

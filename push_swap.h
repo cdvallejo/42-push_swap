@@ -6,7 +6,7 @@
 /*   By: cvallejo <cvallejo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 15:48:25 by cvallejo          #+#    #+#             */
-/*   Updated: 2023/04/26 15:58:16 by cvallejo         ###   ########.fr       */
+/*   Updated: 2023/05/01 16:50:05 by cvallejo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,7 @@ typedef struct stack
 	int	*index;
 	int	*pos;
 	int	*target_pos;
-	int	cost_a;
-	int	cost_b;
+
 	int	size;
 	int	new_size;
 }		t_stack;
@@ -56,13 +55,18 @@ void	sort_2(t_stack *stack_a);
 void	sort_3(t_stack *stack_a);
 void	sort_4_or_more(t_stack *stack_a, t_stack *stack_b);
 
+//sort_3_op.c functions
+void    sort_3_cases_1_to_3(t_stack *stack_a);
+void    sort_3_cases_4_to_6(t_stack *stack_a);
+
 //sort_4_op.c functions
 void	stack_b_to_stack_a(t_stack *stack_a, t_stack *stack_b);
-int		cost_calculator(t_stack *stack_a, t_stack *stack_b, int candidate,
-			int cost_a, int cost_b);
+int 	cost_calculator(t_stack *stack_a, t_stack *stack_b);
+int		check_total_cost(t_stack *stack_b, int cost_a, int cost_b, int i, int *candidate, int total_cost);
+int		check_double_movements(t_stack *stack_a, t_stack *stack_b, int candidate);
 void	stack_a_moves(t_stack *stack_a, t_stack *stack_b, int candidate);
 void	stack_b_moves(t_stack *stack_a, t_stack *stack_b, int candidate);
-void	final_sort(t_stack *stack_a, int i, int count, int candidate);
+void	final_sort(t_stack *stack_a, int count, int candidate);
 
 //Sorting functions
 void	swap_a(t_stack *stack_a, int print);
@@ -81,5 +85,13 @@ void	push_b(t_stack *stack_a, t_stack *stack_b);
 void	print_error(void);
 void	free_memory(char **function);
 void	free_memory_int(int *function);
+void	free_stack(t_stack *stack_origin);
+
+//debug.c functions BY JOTA
+void	debug_leaks(void);
+void	debug_print(char *message, ...);
+void	debug_print_stack(t_stack *stack, char *name);
+void	debug_print_pos(t_stack *stack, char *name);
+void	debug_print_value(t_stack *stack, char *name);
 
 #endif
