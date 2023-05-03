@@ -6,7 +6,7 @@
 #    By: cvallejo <cvallejo@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/26 09:58:38 by cvallejo          #+#    #+#              #
-#    Updated: 2023/05/01 12:40:21 by cvallejo         ###   ########.fr        #
+#    Updated: 2023/05/02 10:23:17 by cvallejo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,8 @@ set_params.c \
 stack_creation.c \
 sort_stack.c \
 sort_3_op.c \
-sort_4_op.c \
+sort_4_op_1.c \
+sort_4_op_2.c \
 movements_swap_push.c \
 movements_rotate.c \
 movements_reverse.c \

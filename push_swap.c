@@ -6,7 +6,7 @@
 /*   By: cvallejo <cvallejo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 16:44:12 by cvallejo          #+#    #+#             */
-/*   Updated: 2023/05/01 15:52:16 by cvallejo         ###   ########.fr       */
+/*   Updated: 2023/05/02 16:37:14 by cvallejo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ char	**check_params(int ac, char **av)
 		}
 		check_ac(ac, split_av, i);
 	}
-	else // BY JOTA
+	else
 	{
 		i = 1;
 		check_ac(ac, av, i);
@@ -52,6 +52,11 @@ void	check_ac(int ac, char **split_av, int i)
 	check_int(ac, split_av, i);
 }
 
+/* Nuestro programa comienza asignando los dos stacks A y B.
+Según los argumentos recibidos, tomaremos con check_params la cantidad
+de números recibidos.
+Con sort_numbers, ordenamos A.
+Finalmente, liberamos la memoria usada que aún estaba siendo alocada*/
 int	main(int ac, char **av)
 {
 	t_stack	stack_a;
@@ -67,9 +72,9 @@ int	main(int ac, char **av)
 	i = 0;
 	numbers = set_params(ac, split_av);
 	stack_a_creation(&stack_a, numbers, split_av);
-	debug_print_stack(&stack_a, "A");  // BY JOTA
+	debug_print_stack(&stack_a, "A");
 	sort_numbers(&stack_a, &stack_b);
-	debug_print_stack(&stack_a, "A");  // BY JOTA
+	debug_print_stack(&stack_a, "A");
 	free(numbers);
 	free_stack(&stack_a);
 	return (0);

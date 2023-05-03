@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: cvallejo <cvallejo@student.42malaga.com    +#+  +:+       +#+         #
+#    By: jmorillo <jmorillo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/26 09:58:38 by cvallejo          #+#    #+#              #
-#    Updated: 2023/02/21 17:48:30 by cvallejo         ###   ########.fr        #
+#    Updated: 2023/04/28 20:33:27 by jmorillo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -65,7 +65,7 @@ NAME = libft.a
 OBJS = ${SRCS:.c=.o}
 OBJS_BONUS = ${SRCS_BONUS:.c=.o}
 FLAGS = -Wall -Wextra -Werror
-CC = gcc 
+CC = gcc
 AR = ar rcs
 RM = rm -f
 
@@ -79,7 +79,7 @@ all: $(NAME)
 
 bonus:${OBJS_BONUS}
 	${AR} ${NAME} ${OBJS_BONUS}
-	
+
 clean:
 	${RM} ${OBJS} ${OBJS_BONUS}
 

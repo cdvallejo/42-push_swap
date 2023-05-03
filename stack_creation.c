@@ -6,13 +6,13 @@
 /*   By: cvallejo <cvallejo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 17:43:26 by cvallejo          #+#    #+#             */
-/*   Updated: 2023/05/01 14:20:10 by cvallejo         ###   ########.fr       */
+/*   Updated: 2023/05/02 16:55:54 by cvallejo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/*Introducimos en la estructura el valor de cada númmero*/
+/*Introducimos en la estructura el valor de cada número*/
 void	stack_value(t_stack *stack_a, int *numbers)
 {
 	int	i;
@@ -91,7 +91,7 @@ void	target_position(t_stack *stack_a, t_stack *stack_b)
 	int	j;
 	int	aux;
 
-	if (stack_b->target_pos != 0)
+	if (stack_b->target_pos != NULL)
 		free_memory_int(stack_b->target_pos);
 	stack_b->target_pos = malloc(sizeof(int) * stack_b->new_size);
 	i = 0;
@@ -101,38 +101,14 @@ void	target_position(t_stack *stack_a, t_stack *stack_b)
 		aux = stack_a->index[stack_a->new_size - 1];
 		while (j < stack_a->new_size)
 		{
-			if ((stack_b->index[i] < stack_a->index[j]
-					&& stack_b->index[i] > aux)
-				|| ((stack_b->index[i] > aux
-						|| stack_b->index[i] < stack_a->index[j])
-					&& aux > stack_a->index[j]))
+			if ((stack_b->index[i] < stack_a->index[j] && stack_b->index[i] > aux)
+				|| ((stack_b->index[i] > aux || stack_b->index[i] < stack_a->index[j]) && aux > stack_a->index[j]))
 				stack_b->target_pos[i] = j;
+			debug_print("Index b: %d compara con Index a: %d - target_pos: %d\n", stack_b->index[i], stack_a->index[j], stack_b->target_pos[i]);
 			aux = stack_a->index[j];
 			j++;
 		}
+		debug_print("target_pos FINAL: %d\n", stack_b->target_pos[i]);
 		i++;
 	}
-}
-
-/*Función que comprueba si el stack está ordenado*/
-int	stack_is_sorted(t_stack *stack_a)
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	j = 0;
-	while (i < stack_a->size)
-	{
-		j = i + 1;
-		while (j < stack_a->size)
-		{
-			if (stack_a->index[i] < stack_a->index[j])
-				j++;
-			else
-				return (0);
-		}
-		i++;
-	}
-	return (1);
 }

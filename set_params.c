@@ -6,14 +6,14 @@
 /*   By: cvallejo <cvallejo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 12:20:14 by cvallejo          #+#    #+#             */
-/*   Updated: 2023/05/01 10:56:42 by cvallejo         ###   ########.fr       */
+/*   Updated: 2023/05/02 17:23:56 by cvallejo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/*Rellena el array de int convirtiendo los argumentos string a int
-dependiendo de si era una cadena o no*/
+/* Rellena el array de int convirtiendo los argumentos string a int
+Lo hará con una función u otra, dependiendo de si era una cadena o no */
 int	*set_params(int ac, char **split_av)
 {
 	int	*numbers;
@@ -25,6 +25,8 @@ int	*set_params(int ac, char **split_av)
 	return (numbers);
 }
 
+/* Si el argumento era un string, metemos en el array numbers
+cada número que estaba en split_av y lo liberamos (ya no hará falta). */
 int	*set_params_string(int ac, char **split_av, int *numbers)
 {
 	int	i;
@@ -42,6 +44,9 @@ int	*set_params_string(int ac, char **split_av, int *numbers)
 	return (numbers);
 }
 
+/* Si el argumento no era un string, alocamos memoria según el número
+de argumentos en el array de int numbers. Metemos en él los números que
+estaban en split_av y lo liberamos (ya no hará falta).*/
 int	*set_params_no_string(int ac, char **split_av, int *numbers)
 {
 	int	i;
@@ -58,6 +63,5 @@ int	*set_params_no_string(int ac, char **split_av, int *numbers)
 		i++;
 		j++;
 	}
-	i = 0;
 	return (numbers);
 }
