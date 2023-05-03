@@ -6,7 +6,7 @@
 /*   By: cvallejo <cvallejo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 17:51:55 by cvallejo          #+#    #+#             */
-/*   Updated: 2023/05/02 17:39:43 by cvallejo         ###   ########.fr       */
+/*   Updated: 2023/05/03 17:08:30 by cvallejo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,16 +39,16 @@ void	stack_b_to_stack_a(t_stack *stack_a, t_stack *stack_b)
 		stack_positions(stack_b);
 		target_position(stack_a, stack_b);
 		if (stack_b->target_pos[0] == 0)
-			push_a(stack_a, stack_b);
+			push_a(stack_a, stack_b, 1);
 		else
 		{
 			candidate = cost_calculator(stack_a, stack_b);
 			if (check_double_movements(stack_a, stack_b, candidate) == 0)
 			{
 				stack_a_moves(stack_a, stack_b, candidate);
-				stack_b_moves(stack_a, stack_b, candidate);
+				stack_b_moves(stack_b, candidate);
 			}
-			push_a(stack_a, stack_b);
+			push_a(stack_a, stack_b, 1);
 		}
 		debug_print_value(stack_a, "value");
 		debug_print_value(stack_b, "value");
@@ -63,8 +63,6 @@ void	stack_b_to_stack_a(t_stack *stack_a, t_stack *stack_b)
 el número de B). */
 int	cost_calculator(t_stack *stack_a, t_stack *stack_b)
 {
-	int	i;
-	int	total_cost;
 	int	candidate;
 
 	candidate = cost_calculator_calculates(stack_a, stack_b, &candidate);
@@ -136,7 +134,7 @@ void	do_rrr(t_stack *stack_a, t_stack *stack_b)
 {
 	while (stack_a->cost_a < 0 && stack_b->cost_b < 0)
 	{
-		rrr(stack_a, stack_b);
+		rrr(stack_a, stack_b, 1);
 		stack_a->cost_a++;
 		stack_b->cost_b++;
 	}

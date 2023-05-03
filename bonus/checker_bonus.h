@@ -1,18 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   checker_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cvallejo <cvallejo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 15:48:25 by cvallejo          #+#    #+#             */
-/*   Updated: 2023/05/03 17:08:04 by cvallejo         ###   ########.fr       */
+/*   Updated: 2023/05/03 17:17:54 by cvallejo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 # include "libft/libft.h"
+# include <stdbool.h>
+# include "get_next_line/get_next_line_bonus.h"
 
 typedef struct stack
 {
@@ -39,7 +41,7 @@ void	check_int(char **split_av, int i);
 
 //set_params.c
 int		*set_params(int ac, char **split_av);
-int		*set_params_string(char **split_av, int *numbers);
+int		*set_params_string(int ac, char **split_av, int *numbers);
 int		*set_params_no_string(int ac, char **split_av, int *numbers);
 
 //stack_creation.c functions
@@ -49,32 +51,6 @@ void	stack_value(t_stack *stack_a, int *numbers);
 void	stack_index(t_stack *stack_origin);
 void	target_position(t_stack *stack_a, t_stack *stack_b);
 void	stack_positions(t_stack *stack_origin);
-
-//sort_stack.c functions
-void	sort_numbers(t_stack *stack_a, t_stack *stack_b);
-void	sort_2(t_stack *stack_a);
-void	sort_3(t_stack *stack_a);
-void	sort_4_or_more(t_stack *stack_a, t_stack *stack_b);
-
-//sort_3_op.c functions
-void	sort_3_cases_1_to_3(t_stack *stack_a);
-void	sort_3_cases_4_to_6(t_stack *stack_a);
-
-//sort_4_op_1.c functions
-void	stack_b_to_stack_a(t_stack *stack_a, t_stack *stack_b);
-int		cost_calculator(t_stack *stack_a, t_stack *stack_b);
-int		cost_calculator_calculates(t_stack *stack_a, t_stack *stack_b,
-			int *candidate);
-int		check_double_movements(t_stack *stack_a, t_stack *stack_b,
-			int candidate);
-void	do_rrr(t_stack *stack_a, t_stack *stack_b);
-
-//sort_4_op_2.c functions
-void	do_rr(t_stack *stack_a, t_stack *stack_b);
-void	stack_a_moves(t_stack *stack_a, t_stack *stack_b, int candidate);
-void	stack_b_moves(t_stack *stack_b, int candidate);
-void	final_sort(t_stack *stack_a);
-void	final_movements(t_stack *stack_a, int pos);
 
 //Sorting functions
 void	swap_a(t_stack *stack_a, int print);
@@ -95,12 +71,5 @@ void	print_error(void);
 void	free_memory(char **function);
 void	free_memory_int(int *function);
 void	free_stack(t_stack *stack_origin);
-
-//debug.c functions
-void	debug_leaks(void);
-void	debug_print(char *message, ...);
-void	debug_print_stack(t_stack *stack, char *name);
-void	debug_print_pos(t_stack *stack, char *name);
-void	debug_print_value(t_stack *stack, char *name);
 
 #endif

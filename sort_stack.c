@@ -6,7 +6,7 @@
 /*   By: cvallejo <cvallejo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 10:58:13 by cvallejo          #+#    #+#             */
-/*   Updated: 2023/05/02 15:58:39 by cvallejo         ###   ########.fr       */
+/*   Updated: 2023/05/03 17:06:38 by cvallejo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,6 @@ void	sort_numbers(t_stack *stack_a, t_stack *stack_b)
 2) El segundo número es mayor: se hace swap_a */
 void	sort_2(t_stack *stack_a)
 {
-	int	i;
-
 	if (stack_a->index[0] < stack_a->index[1])
 		return ;
 	else
@@ -55,18 +53,13 @@ void	sort_4_or_more(t_stack *stack_a, t_stack *stack_b)
 
 	if (stack_is_sorted(stack_a) == 1)
 		return ;
-	stack_b->size = stack_a->size - 3;
-	stack_b->new_size = 0;
-	stack_b->value = malloc(sizeof(int) * stack_b->size);
-	stack_b->index = malloc(sizeof(int) * stack_b->size);
-	stack_b->pos = NULL;
-	stack_b->target_pos = NULL;
+	stack_b_creation(stack_a, stack_b);
 	i = 0;
 	while (i < stack_a->size - 3)
 	{
 		if (stack_a->index[0] <= stack_a->size - 3)
 		{
-			push_b(stack_a, stack_b);
+			push_b(stack_a, stack_b, 1);
 			i++;
 		}
 		else
@@ -76,3 +69,4 @@ void	sort_4_or_more(t_stack *stack_a, t_stack *stack_b)
 	stack_b_to_stack_a(stack_a, stack_b);
 	free_stack(stack_b);
 }
+

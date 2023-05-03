@@ -6,7 +6,7 @@
 /*   By: cvallejo <cvallejo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 17:51:55 by cvallejo          #+#    #+#             */
-/*   Updated: 2023/05/02 16:27:21 by cvallejo         ###   ########.fr       */
+/*   Updated: 2023/05/03 17:07:51 by cvallejo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	do_rr(t_stack *stack_a, t_stack *stack_b)
 {
 	while (stack_a->cost_a > 0 && stack_b->cost_b > 0)
 	{
-		rr(stack_a, stack_b);
+		rr(stack_a, stack_b, 1);
 		stack_a->cost_a--;
 		stack_b->cost_b--;
 	}
@@ -61,7 +61,7 @@ void	stack_a_moves(t_stack *stack_a, t_stack *stack_b, int candidate)
 
 /* Mueve B haciendo ra / rra las veces necesarias según la posición
 de su candidato*/
-void	stack_b_moves(t_stack *stack_a, t_stack *stack_b, int candidate)
+void	stack_b_moves(t_stack *stack_b, int candidate)
 {
 	int	i;
 

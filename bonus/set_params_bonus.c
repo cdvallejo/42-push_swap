@@ -6,7 +6,7 @@
 /*   By: cvallejo <cvallejo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 12:20:14 by cvallejo          #+#    #+#             */
-/*   Updated: 2023/05/03 17:05:13 by cvallejo         ###   ########.fr       */
+/*   Updated: 2023/05/02 17:23:56 by cvallejo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,8 @@ int	*set_params(int ac, char **split_av)
 {
 	int	*numbers;
 
-	numbers = NULL;
 	if (ac == 2)
-		numbers = set_params_string(split_av, numbers);
+		numbers = set_params_string(ac, split_av, numbers);
 	else
 		numbers = set_params_no_string(ac, split_av, numbers);
 	return (numbers);
@@ -28,7 +27,7 @@ int	*set_params(int ac, char **split_av)
 
 /* Si el argumento era un string, metemos en el array numbers
 cada número que estaba en split_av y lo liberamos (ya no hará falta). */
-int	*set_params_string(char **split_av, int *numbers)
+int	*set_params_string(int ac, char **split_av, int *numbers)
 {
 	int	i;
 

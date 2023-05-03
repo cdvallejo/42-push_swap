@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   push_swap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cvallejo <cvallejo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 16:44:12 by cvallejo          #+#    #+#             */
-/*   Updated: 2023/05/03 17:02:34 by cvallejo         ###   ########.fr       */
+/*   Updated: 2023/05/03 16:56:22 by cvallejo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,33 +49,6 @@ void	check_ac(int ac, char **split_av, int i)
 {
 	check_number(ac, split_av, i);
 	check_repeat_number(ac, split_av, i);
-	check_int(split_av, i);
+	check_int(ac, split_av, i);
 }
 
-/* Nuestro programa comienza asignando los dos stacks A y B.
-Según los argumentos recibidos, tomaremos con check_params la cantidad
-de números recibidos.
-Con sort_numbers, ordenamos A.
-Finalmente, liberamos la memoria usada que aún estaba siendo alocada*/
-int	main(int ac, char **av)
-{
-	t_stack	stack_a;
-	t_stack	stack_b;
-	int		*numbers;
-	char	**split_av;
-	int		i;
-
-	debug_leaks();
-	split_av = check_params(ac, av);
-	if (split_av == NULL)
-		return (0);
-	i = 0;
-	numbers = set_params(ac, split_av);
-	stack_a_creation(&stack_a, numbers, split_av);
-	free(numbers);
-	debug_print_stack(&stack_a, "A");
-	sort_numbers(&stack_a, &stack_b);
-	debug_print_stack(&stack_a, "A");
-	free_stack(&stack_a);
-	return (0);
-}
