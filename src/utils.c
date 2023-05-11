@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils_bonus.c                                      :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cvallejo <cvallejo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 12:57:51 by cvallejo          #+#    #+#             */
-/*   Updated: 2023/05/10 17:12:36 by cvallejo         ###   ########.fr       */
+/*   Updated: 2023/05/10 12:26:54 by cvallejo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../checker_bonus.h"
+#include "../push_swap.h"
 
-//Función que comprueba si el stack está ordenado
+//Comprueba si el stack está ordenado
 int	stack_is_sorted(t_stack *stack_a)
 {
 	int	i;

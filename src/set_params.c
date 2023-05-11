@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   set_params_bonus.c                                 :+:      :+:    :+:   */
+/*   set_params.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cvallejo <cvallejo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 12:20:14 by cvallejo          #+#    #+#             */
-/*   Updated: 2023/05/10 12:07:04 by cvallejo         ###   ########.fr       */
+/*   Updated: 2023/05/10 12:05:29 by cvallejo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../checker_bonus.h"
+#include "../push_swap.h"
 
 /* Rellena el array de int convirtiendo los argumentos string a int
 Lo hará con una función u otra, dependiendo de si era una cadena o no */

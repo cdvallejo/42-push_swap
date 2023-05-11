@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   movements_reverse_bonus.c                          :+:      :+:    :+:   */
+/*   movements_reverse.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cvallejo <cvallejo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 12:01:34 by cvallejo          #+#    #+#             */
-/*   Updated: 2023/05/10 12:06:55 by cvallejo         ###   ########.fr       */
+/*   Updated: 2023/05/10 12:05:14 by cvallejo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../checker_bonus.h"
+#include "../push_swap.h"
 
 //Mueve todos los elementos de a 1 posición descendente
 //El último elemento pasa a ser el primero

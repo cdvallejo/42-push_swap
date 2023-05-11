@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cvallejo <cvallejo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 11:39:28 by cvallejo          #+#    #+#             */
-/*   Updated: 2023/05/03 12:10:57 by cvallejo         ###   ########.fr       */
+/*   Updated: 2023/05/10 12:20:29 by cvallejo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 /*Almaceno con buffer_text la cantidad de texto que tiene
 que leer, rellenándolo con '\0' como un calloc.*/
@@ -23,7 +23,7 @@ char	*ft_read_and_buff(int fd, char *text_asked)
 	if (!buffer_text)
 		return (NULL);
 	rd_byte = 1;
-	while (!ft_strchr(text_asked, '\n') && rd_byte != 0)
+	while (!ft_strchr_gnl(text_asked, '\n') && rd_byte != 0)
 	{
 		rd_byte = read(fd, buffer_text, BUFFER_SIZE);
 		if (rd_byte < 0)
@@ -37,7 +37,7 @@ char	*ft_read_and_buff(int fd, char *text_asked)
 			text_asked = (char *)malloc(1 * sizeof(char));
 			text_asked[0] = '\0';
 		}
-		text_asked = ft_strjoin(text_asked, buffer_text);
+		text_asked = ft_strjoin_gnl(text_asked, buffer_text);
 	}
 	free(buffer_text);
 	return (text_asked);
@@ -94,7 +94,8 @@ char	*ft_next_text_asked(char *text_asked)
 		free(text_asked);
 		return (NULL);
 	}
-	next_text = (char *)malloc(sizeof(char) *(ft_strlen(text_asked) - i + 1));
+	next_text = (char *)malloc(sizeof(char)
+			* (ft_strlen_gnl(text_asked) - i + 1));
 	if (!next_text)
 		return (NULL);
 	i++;
