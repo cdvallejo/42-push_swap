@@ -27,8 +27,6 @@ Sorting values is simple. To sort them the fastest way possible is less simple. 
 because from one integers configuration to another, the most efficient sorting solution can
 differ.
 ```
-You can read the project subject [here]((https://github.com/Falitomal/Push_Swap/blob/main/Push_swap.pdf))
-
 
 ## 🛠️ Usage
 
