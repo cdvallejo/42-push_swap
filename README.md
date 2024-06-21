@@ -54,12 +54,6 @@ $ ./push_swap $ARG
 ```
 where ```$ARG``` is a space separated list of integers, e.g. ```ARG="1 5 2 4 3"```
 
-
-## 🛠️ USED ALGORITHM
-
-I used a variation of the [Radix Sort](https://en.wikipedia.org/wiki/Radix_sort) algorithm. radix sort is a non-comparative sorting algorithm. It avoids comparison by creating and distributing elements into buckets according to their radix. For elements with more than one significant digit, this bucketing process is repeated for each digit, while preserving the ordering of the prior step, until all digits have been considered. For this reason, radix sort has also been called bucket sort and digital sort.
-
-
 ## MANDATORY PART
 The rules :
 
